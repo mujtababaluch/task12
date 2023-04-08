@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Audio Similarity Detection</title>
+	<style>
+		* {
+			box-sizing: border-box;
+		}
+
+		body {
+			font-family: Arial, sans-serif;
+			background-color: #f5f5f5;
+			margin: 0;
+			padding: 0;
+		}
+
+		h1 {
+			text-align: center;
+			margin-top: 50px;
+		}
+
+		p {
+			font-size: 20px;
+			margin: 50px 0;
+			text-align: center;
+		}
+
+		.back-button {
+			display: block;
+			width: 150px;
+			margin: 0 auto;
+			background-color: #333;
+			color: #fff;
+			padding: 10px 20px;
+			font-size: 16px;
+			font-weight: bold;
+			border: none;
+			border-radius: 5px;
+			text-align: center;
+			text-decoration: none;
+			cursor: pointer;
+			transition: background-color 0.3s ease;
+		}
+
+		.back-button:hover {
+			background-color: #666;
+		}
+
+		table {
+			border-collapse: collapse;
+			margin: 50px auto;
+		}
+
+		th, td {
+			padding: 10px;
+			text-align: center;
+			border: 1px solid #ddd;
+		}
+
+		th {
+			background-color: #f2f2f2;
+			font-weight: bold;
+		}
+
+		td:nth-child(1) {
+			font-weight: bold;
+		}
+
+		td:nth-child(2) {
+			background-color: #00bfff;
+			color: #fff;
+			font-weight: bold;
+		}
+
+		td:nth-child(3) {
+			background-color: #0080ff;
+			color: #fff;
+			font-weight: bold;
+		}
+
+		td:nth-child(4) {
+			background-color: #0000ff;
+			color: #fff;
+			font-weight: bold;
+		}
+
+		td:nth-child(5) {
+			background-color: #8000ff;
+			color: #fff;
+			font-weight: bold;
+		}
+
+		td:nth-child(6) {
+			background-color: #ff00ff;
+			color: #fff;
+			font-weight: bold;
+		}
+
+		td:nth-child(7) {
+			background-color: #ff0080;
+			color: #fff;
+			font-weight: bold;
+		}
+
+		td:nth-child(8) {
+			background-color: #ff0000;
+			color: #fff;
+			font-weight: bold;
+		}
+	</style>
+</head>
+<body>
+	<h1>Audio Similarity Detection Results</h1>
+	<p>The similarity score between the two audio files is: {{ similarity }}</p>
+	<table>
+		<tr>
+			<th>Similarity Score</th>
+			<th>1.0</th>
+			<th>0.9-0.99</th>
+			<th>0.8-0.89</th>
+			<th>0.7-0.79</th>
+			<th>0.6-0.69</th>
+			<th>0.5-0.59</th>
+			<th>0.0-0.49</th>
+		</tr>
+    </tr>
+    <tr>
+        <td>Interpretation</td>
+        <td>The audio files are identical</td>
+        <td>The audio files have similar content and are likely to be from the same source</td>
+        <td>The audio files share some commonalities but are not highly similar</td>
+        <td>The audio files are different but may share some commonalities</td>
+        <td>The audio files have some commonalities but are not highly similar</td>
+        <td>The audio files have limited commonalities</td>
+        <td>The audio files are dissimilar</td>
+    </tr>
+</table>
+<a href="{{ url_for('index') }}" class="back-button">Do it Again</a>
+</body>
+</html>
